@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#071d49">
+  <title>Learning Space ภาค 10 | Executive Control Center</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">10</span><div><strong>Learning Space</strong><small>สำนักงานศึกษาธิการภาค 10</small></div></div>
+    <nav aria-label="เมนูหลัก">
+      <button class="nav-btn active" data-view="overview">ภาพรวม</button>
+      <button class="nav-btn" data-view="space">Learning Space</button>
+      <button class="nav-btn" data-view="spiral">วงจร SPIRAL</button>
+    </nav>
+    <div class="live"><span></span> ระบบพร้อมใช้งาน</div>
+  </header>
+
+  <main>
+    <section class="view active" id="overview">
+      <div class="page-head">
+        <div><p class="eyebrow">EXECUTIVE CONTROL CENTER</p><h1>เห็นทั้งระบบ ตัดสินใจได้ทันที</h1><p>ติดตามคน งาน หลักฐาน และผลลัพธ์จากพื้นที่เดียว — เปลี่ยนงานครั้งเดียวให้เป็นระบบพัฒนาต่อเนื่อง</p></div>
+        <button class="primary" id="runAutomation">▶ จำลองระบบทำงาน</button>
+      </div>
+
+      <div class="metrics">
+        <article><span>ผู้ใช้งานในระบบ</span><strong>245</strong><small>คน · ยืนยันตัวตนแล้ว</small></article>
+        <article><span>อัตราตอบกลับ</span><strong>63.3%</strong><small>155 จาก 245 คน</small></article>
+        <article><span>ความพึงพอใจ</span><strong>4.63</strong><small>จาก 5 คะแนน</small></article>
+        <article><span>พร้อมเข้าร่วมครั้งต่อไป</span><strong>94.8%</strong><small class="good">สัญญาณเชิงบวก</small></article>
+      </div>
+
+      <div class="dashboard-grid">
+        <article class="panel workflow-panel">
+          <div class="panel-head"><div><p class="eyebrow">AUTOMATION FLOW</p><h2>ระบบทำอะไรให้อัตโนมัติ</h2></div><span class="pill">6 ขั้นตอน</span></div>
+          <div class="flow" id="flow">
+            <button class="flow-step done" data-step="0"><i>01</i><span><b>รับเข้า</b><small>ลงทะเบียน / Line OA</small></span></button>
+            <button class="flow-step active" data-step="1"><i>02</i><span><b>คัดกรอง</b><small>Mapping ความพร้อม</small></span></button>
+            <button class="flow-step" data-step="2"><i>03</i><span><b>จับคู่</b><small>Coach / PLC / ทรัพยากร</small></span></button>
+            <button class="flow-step" data-step="3"><i>04</i><span><b>พัฒนา</b><small>Portfolio และหลักฐาน</small></span></button>
+            <button class="flow-step" data-step="4"><i>05</i><span><b>เผยแพร่</b><small>Show & Share</small></span></button>
+            <button class="flow-step" data-step="5"><i>06</i><span><b>ติดตามผล</b><small>Dashboard และแจ้งเตือน</small></span></button>
+          </div>
+          <div class="automation-log"><span class="pulse"></span><p id="automationText"><b>กำลังคัดกรองข้อมูล</b><br>ระบบพบ 12 ทีมพร้อมเข้าสู่กระบวนการ Coaching</p><strong id="automationCount">02/06</strong></div>
+        </article>
+
+        <article class="panel attention">
+          <div class="panel-head"><div><p class="eyebrow">DECISION SIGNALS</p><h2>เรื่องที่ต้องตัดสินใจ</h2></div><span class="count">3</span></div>
+          <div class="decision"><i class="red">!</i><div><b>ทีมยังไม่มี Coach</b><small>4 ทีม · ควรจับคู่ภายใน 3 วัน</small></div><button>มอบหมาย</button></div>
+          <div class="decision"><i class="amber">↗</i><div><b>ผลงานพร้อมขยายผล</b><small>7 ผลงาน · ผ่านเกณฑ์ระดับภาค</small></div><button>ดูผลงาน</button></div>
+          <div class="decision"><i class="blue">✓</i><div><b>หลักฐานรอรับรอง</b><small>18 รายการ · จาก 6 จังหวัด</small></div><button>ตรวจสอบ</button></div>
+        </article>
+      </div>
+
+      <article class="panel province-panel">
+        <div class="panel-head"><div><p class="eyebrow">REGIONAL PULSE</p><h2>ความก้าวหน้ารายพื้นที่</h2></div><div class="legend"><span><i class="l1"></i>ดำเนินการ</span><span><i class="l2"></i>พร้อมขยายผล</span></div></div>
+        <div class="province-bars">
+          <div><span>อุดรธานี</span><em><i style="--w:84%"></i></em><b>84%</b></div>
+          <div><span>หนองคาย</span><em><i style="--w:72%"></i></em><b>72%</b></div>
+          <div><span>เลย</span><em><i style="--w:68%"></i></em><b>68%</b></div>
+          <div><span>หนองบัวลำภู</span><em><i style="--w:61%"></i></em><b>61%</b></div>
+          <div><span>บึงกาฬ</span><em><i style="--w:56%"></i></em><b>56%</b></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="view" id="space">
+      <div class="page-head compact"><div><p class="eyebrow">INTERACTIVE BLUEPRINT</p><h1>Learning Space ที่เชื่อมคน–งาน–ข้อมูล</h1><p>เลือกหมายเลขบนภาพ เพื่อดูว่างานในแต่ละโซนเชื่อมเข้าสู่ระบบอย่างไร</p></div><button class="outline" id="tourBtn">พาชมทั้ง 6 โซน</button></div>
+      <div class="space-layout">
+        <div class="blueprint">
+          <img src="assets/learning-space-concept.png" alt="ภาพร่าง Learning Space แบบ 6 โซน เชื่อมต่อด้วยวงจร SPIRAL">
+          <button class="hotspot h1 active" data-zone="0" aria-label="โซน 1">01</button>
+          <button class="hotspot h2" data-zone="1" aria-label="โซน 2">02</button>
+          <button class="hotspot h3" data-zone="2" aria-label="โซน 3">03</button>
+          <button class="hotspot h4" data-zone="3" aria-label="โซน 4">04</button>
+          <button class="hotspot h5" data-zone="4" aria-label="โซน 5">05</button>
+          <button class="hotspot h6" data-zone="5" aria-label="โซน 6">06</button>
+        </div>
+        <aside class="zone-card" id="zoneCard">
+          <span class="zone-no" id="zoneNo">01</span><p class="eyebrow" id="zoneType">WELCOME & MAPPING</p>
+          <h2 id="zoneTitle">จุดรับเข้าและสำรวจความพร้อม</h2>
+          <p id="zoneDesc">ยืนยันตัวตน ลงทะเบียน และเก็บข้อมูลความต้องการครั้งเดียว ระบบสร้างโปรไฟล์และเส้นทางพัฒนาให้ทันที</p>
+          <ul id="zoneList"><li>เช็กอินผ่าน QR / Line OA</li><li>Mapping ปัญหาและศักยภาพ</li><li>ส่งต่อทีมและทรัพยากรอัตโนมัติ</li></ul>
+          <div class="data-link"><span>ข้อมูลที่ส่งต่อ</span><b id="zoneData">Profile → Dashboard → Coach</b></div>
+        </aside>
+      </div>
+      <div class="outcomes">
+        <article><b>ลดงานซ้ำ</b><span>กรอกข้อมูลครั้งเดียว ใช้ได้ทุกกิจกรรม</span></article>
+        <article><b>ไม่ทิ้งใครไว้ข้างหลัง</b><span>แจ้งเตือนทีมที่หยุดชะงักหรือขาดผู้สนับสนุน</span></article>
+        <article><b>มีหลักฐานตัดสินใจ</b><span>เห็นผลลัพธ์ตั้งแต่บุคคล จังหวัด ถึงระดับภาค</span></article>
+      </div>
+    </section>
+
+    <section class="view" id="spiral">
+      <div class="page-head compact"><div><p class="eyebrow">SYSTEM-BASED DEVELOPMENT</p><h1>SPIRAL: วงจรพัฒนาที่ไม่จบพร้อมงาน</h1><p>ทุกกิจกรรมสร้างข้อมูลกลับเข้าสู่วงจร เพื่อพัฒนาคน งาน และนโยบายรอบถัดไป</p></div></div>
+      <div class="spiral-board">
+        <div class="spiral-visual" aria-label="วงจร SPIRAL">
+          <div class="orbit o1"><span>S</span><b>Survey</b><small>สำรวจ</small></div>
+          <div class="orbit o2"><span>P</span><b>Plan</b><small>วางแผน</small></div>
+          <div class="orbit o3"><span>I</span><b>Implement</b><small>ลงมือ</small></div>
+          <div class="orbit o4"><span>R</span><b>Reflect</b><small>สะท้อน</small></div>
+          <div class="orbit o5"><span>A</span><b>Amplify</b><small>ขยายผล</small></div>
+          <div class="orbit o6"><span>L</span><b>Learn</b><small>เรียนรู้ต่อ</small></div>
+          <div class="core"><strong>SPIRAL</strong><small>ข้อมูลไหลต่อเนื่อง</small></div>
+        </div>
+        <div class="impact-panel">
+          <p class="eyebrow">MANAGEMENT VALUE</p><h2>ผู้บริหารเห็นอะไรจากระบบ</h2>
+          <div class="impact"><i>01</i><div><b>เห็นความพร้อมก่อนลงทุน</b><span>รู้ว่าพื้นที่ใดต้องการคน งบประมาณ หรือความรู้เฉพาะด้าน</span></div></div>
+          <div class="impact"><i>02</i><div><b>ติดตามระหว่างทาง ไม่รอรายงานปลายปี</b><span>สถานะ หลักฐาน และอุปสรรคอัปเดตเป็นรอบ</span></div></div>
+          <div class="impact"><i>03</i><div><b>เลือกขยายผลจากหลักฐาน</b><span>เปรียบเทียบผลลัพธ์และความพร้อมของนวัตกรรมแต่ละพื้นที่</span></div></div>
+          <div class="impact"><i>04</i><div><b>เปลี่ยนเสียงสะท้อนเป็นแผนงาน</b><span>Reflection ถูกจัดหมวดและส่งเป็นประเด็นตัดสินใจโดยอัตโนมัติ</span></div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast"><span>✓</span><div><b>Automation ทำงานครบแล้ว</b><small>Dashboard และรายการตัดสินใจได้รับการอัปเดต</small></div></div>
+  <script src="app.js"></script>
+</body>
+</html>
