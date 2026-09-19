@@ -41,3 +41,11 @@ function showZone(i){const z=zones[i];hotspots.forEach((h,n)=>h.classList.toggle
 hotspots.forEach((h,i)=>h.addEventListener('click',()=>showZone(i)));
 document.getElementById('tourBtn').addEventListener('click',async()=>{for(let i=0;i<zones.length;i++){showZone(i);await new Promise(r=>setTimeout(r,1100))}});
 document.querySelectorAll('.decision button').forEach(btn=>btn.addEventListener('click',()=>{btn.textContent='เปิดรายการแล้ว';btn.style.color='#008c73'}));
+
+const evolutionStages=[...document.querySelectorAll('.evo-stage')];
+evolutionStages.forEach((stage,i)=>stage.addEventListener('click',()=>evolutionStages.forEach((s,n)=>s.classList.toggle('focus',n===i))));
+document.getElementById('playEvolution').addEventListener('click',async()=>{
+  const btn=document.getElementById('playEvolution');btn.textContent='กำลังเล่าเส้นทาง...';
+  for(let i=0;i<evolutionStages.length;i++){evolutionStages.forEach((s,n)=>s.classList.toggle('focus',n===i));await new Promise(r=>setTimeout(r,1250))}
+  btn.textContent='↻ เล่นอีกครั้ง';
+});
