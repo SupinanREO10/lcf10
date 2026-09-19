@@ -41,6 +41,15 @@ function showZone(i){const z=zones[i];hotspots.forEach((h,n)=>h.classList.toggle
 hotspots.forEach((h,i)=>h.addEventListener('click',()=>showZone(i)));
 document.getElementById('tourBtn').addEventListener('click',async()=>{for(let i=0;i<zones.length;i++){showZone(i);await new Promise(r=>setTimeout(r,1100))}});
 document.querySelectorAll('.decision button').forEach(btn=>btn.addEventListener('click',()=>{btn.textContent='เปิดรายการแล้ว';btn.style.color='#008c73'}));
+const sourceInfo=[
+  ['ผู้ยืนยันตัวตน 245 คน','ระบบลงทะเบียน LCF10 → ตรวจรหัสผู้เข้าร่วม → ตัดรายการซ้ำ → นับเฉพาะผู้ยืนยันสำเร็จ'],
+  ['ผู้ตอบแบบประเมิน 155 คน','แบบประเมินหลังงาน → เชื่อมกับรหัสผู้เข้าร่วม → ตรวจความครบถ้วน → คิดอัตราตอบกลับ 155 ÷ 245'],
+  ['ความพึงพอใจเฉลี่ย 4.63','คำถามมาตรประมาณค่า 5 ระดับจากผู้ตอบ 155 คน → รวมคะแนน → หารจำนวนคำตอบที่สมบูรณ์'],
+  ['พร้อมเข้าร่วมครั้งต่อไป 94.8%','คำถามความตั้งใจเข้าร่วมครั้งต่อไปจากแบบประเมิน → นับคำตอบเชิงบวก → คิดเป็นร้อยละของผู้ตอบ']
+];
+const sourcePop=document.getElementById('sourcePop');
+document.querySelectorAll('.source-tag').forEach((btn,i)=>btn.addEventListener('click',()=>{document.getElementById('sourceTitle').textContent=sourceInfo[i][0];document.getElementById('sourceDetail').textContent=sourceInfo[i][1];sourcePop.classList.add('show')}));
+sourcePop.querySelector('button').addEventListener('click',()=>sourcePop.classList.remove('show'));
 
 const evolutionStages=[...document.querySelectorAll('.evo-stage')];
 evolutionStages.forEach((stage,i)=>stage.addEventListener('click',()=>evolutionStages.forEach((s,n)=>s.classList.toggle('focus',n===i))));
