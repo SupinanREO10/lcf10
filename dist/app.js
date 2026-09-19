@@ -62,3 +62,13 @@ document.querySelectorAll('.evidence-tab').forEach(tab=>tab.addEventListener('cl
   document.querySelectorAll('.evidence-tab').forEach(t=>t.classList.toggle('active',t===tab));
   document.querySelectorAll('.evidence-view').forEach(v=>v.classList.toggle('active',v.id===`${tab.dataset.evidence}-evidence`));
 }));
+document.querySelectorAll('.role-btn').forEach(btn=>btn.addEventListener('click',()=>{
+  document.querySelectorAll('.role-btn').forEach(b=>b.classList.toggle('active',b===btn));
+  document.querySelectorAll('.role-view').forEach(v=>v.classList.toggle('active',v.id===`${btn.dataset.role}-role`));
+}));
+document.querySelectorAll('.criteria input').forEach(input=>input.addEventListener('input',()=>{
+  input.previousElementSibling.textContent=`${input.value}/${input.max}`;
+  const total=[...document.querySelectorAll('.criteria input')].reduce((sum,x)=>sum+Number(x.value),0);
+  document.querySelector('.score-total strong').innerHTML=`${total}<small>/100</small>`;
+}));
+document.getElementById('saveScore').addEventListener('click',e=>{e.currentTarget.textContent='✓ บันทึกแล้ว';e.currentTarget.classList.add('saved')});
