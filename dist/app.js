@@ -72,3 +72,15 @@ document.querySelectorAll('.criteria input').forEach(input=>input.addEventListen
   document.querySelector('.score-total strong').innerHTML=`${total}<small>/100</small>`;
 }));
 document.getElementById('saveScore').addEventListener('click',e=>{e.currentTarget.textContent='✓ บันทึกแล้ว';e.currentTarget.classList.add('saved')});
+
+const rubrics=[
+ {title:'นวัตกรรมพลิกโฉม สู่เมืองแห่งการเรียนรู้',measure:'ความริเริ่มแปลกใหม่และการแก้ปัญหาที่ต่างจากเดิม',items:['ความแปลกใหม่ของแนวคิด','การแก้ปัญหาที่เป็นรูปธรรม','หลักฐานการใช้งานจริง','ศักยภาพต่อยอด','การสื่อสารคุณค่าของนวัตกรรม']},
+ {title:'อัตลักษณ์ทรงคุณค่า สู่เมืองแห่งการเรียนรู้',measure:'ความลึกของการใช้ภูมิปัญญา อัตลักษณ์ และการมีส่วนร่วมของชุมชน',items:['การใช้ภูมิปัญญา/ทุนวัฒนธรรมท้องถิ่น','ความสอดคล้องกับบริบทของพื้นที่','การมีส่วนร่วมของชุมชน','การธำรงและต่อยอดอัตลักษณ์','คุณค่าต่อความภาคภูมิใจของท้องถิ่น']},
+ {title:'ต้นแบบแห่งการต่อยอด สู่เมืองแห่งการเรียนรู้',measure:'ความพร้อมในการส่งต่อและทำซ้ำในบริบทอื่น',items:['ความพร้อมของคู่มือ/ชุดเครื่องมือ','หลักฐานการทำซ้ำ/ปรับใช้','ความคุ้มค่าและทรัพยากร','ความยืดหยุ่นต่อบริบทที่ต่างกัน','ความชัดเจนของเงื่อนไขความสำเร็จ']},
+ {title:'พลังผู้เรียนนำวิถี สู่เมืองแห่งการเรียนรู้',measure:'หลักฐานผลลัพธ์ต่อผู้เรียนและการออกแบบที่ยึดผู้เรียนเป็นศูนย์กลาง',items:['หลักฐานผลลัพธ์ต่อผู้เรียน','ความครอบคลุมกลุ่มเป้าหมาย','การออกแบบที่ยึดผู้เรียนเป็นศูนย์กลาง','การตอบสนองความต่าง/ความเสมอภาค','ความต่อเนื่องของผลต่อผู้เรียน']},
+ {title:'สานพลังภาคี สู่เมืองแห่งการเรียนรู้',measure:'ความหลากหลายของภาคี บทบาทที่เป็นรูปธรรม และความยั่งยืนของความร่วมมือ',items:['ความหลากหลายของภาคี','บทบาทที่เป็นรูปธรรมของภาคี','ความต่อเนื่องและความยั่งยืน','ผลลัพธ์ร่วมจากเครือข่าย','การขยายและเชื่อมเครือข่ายใหม่']},
+ {title:'จุดประกายแรงบันดาลใจ สู่เมืองแห่งการเรียนรู้',measure:'พลังการเป็นแบบอย่างและการจุดประกายจากหลักฐานเชิงประจักษ์',items:['การเป็นแบบอย่างที่จับต้องได้','พลังเรื่องเล่า/การสื่อสาร','การเอาชนะอุปสรรค/ความมานะ','การสร้างแรงกระเพื่อมต่อผู้อื่น','คุณค่าเชิงบันดาลใจที่ยั่งยืน']}
+];
+const rubricGrid=document.getElementById('rubricGrid');
+function showRubric(i){const r=rubrics[i];document.querySelectorAll('.rubric-btn').forEach((b,n)=>b.classList.toggle('active',n===i));document.getElementById('rubricNo').textContent=String(i+1).padStart(2,'0');document.getElementById('rubricTitle').textContent=r.title;document.getElementById('rubricMeasure').textContent='มุ่งวัด: '+r.measure;document.getElementById('rubricCriteria').innerHTML=r.items.map((x,n)=>`<div><small>ตัวชี้วัด ${n+1}</small>${x}</div>`).join('')}
+if(rubricGrid){rubricGrid.innerHTML=rubrics.map((r,i)=>`<button class="rubric-btn${i===0?' active':''}" data-rubric="${i}"><span>ประเภทที่ ${i+1}</span><b>${r.title}</b></button>`).join('');rubricGrid.querySelectorAll('.rubric-btn').forEach(b=>b.addEventListener('click',()=>showRubric(Number(b.dataset.rubric))));showRubric(0)}
