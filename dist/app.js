@@ -58,3 +58,7 @@ document.getElementById('playEvolution').addEventListener('click',async()=>{
   for(let i=0;i<evolutionStages.length;i++){evolutionStages.forEach((s,n)=>s.classList.toggle('focus',n===i));await new Promise(r=>setTimeout(r,1250))}
   btn.textContent='↻ เล่นอีกครั้ง';
 });
+document.querySelectorAll('.evidence-tab').forEach(tab=>tab.addEventListener('click',()=>{
+  document.querySelectorAll('.evidence-tab').forEach(t=>t.classList.toggle('active',t===tab));
+  document.querySelectorAll('.evidence-view').forEach(v=>v.classList.toggle('active',v.id===`${tab.dataset.evidence}-evidence`));
+}));
