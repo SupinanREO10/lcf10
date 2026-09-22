@@ -1,0 +1,23 @@
+CREATE TABLE `responses` (
+	`id` integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+	`role` text NOT NULL,
+	`province` text NOT NULL,
+	`participation` text NOT NULL,
+	`ratings` text NOT NULL,
+	`expectation` text NOT NULL,
+	`actual_result` text NOT NULL,
+	`keep` text DEFAULT '' NOT NULL,
+	`gap_reason` text DEFAULT '' NOT NULL,
+	`success_factor` text DEFAULT '' NOT NULL,
+	`obstacle` text DEFAULT '' NOT NULL,
+	`improvement` text NOT NULL,
+	`application` text DEFAULT '' NOT NULL,
+	`support` text DEFAULT '' NOT NULL,
+	`additional` text DEFAULT '' NOT NULL,
+	`timeline` text NOT NULL,
+	`next_action` text NOT NULL,
+	`adoption_status` text DEFAULT '' NOT NULL,
+	`success_indicator` text DEFAULT '' NOT NULL,
+	`drive_synced` integer DEFAULT false NOT NULL,
+	`created_at` text DEFAULT CURRENT_TIMESTAMP NOT NULL
+);
