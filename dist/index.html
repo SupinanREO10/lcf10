@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="chrome.css">
   <link rel="stylesheet" href="header2.css">
   <link rel="stylesheet" href="mission.css">
+  <link rel="stylesheet" href="space-next.css">
 </head>
 <body>
   <header class="topbar">
@@ -134,27 +135,57 @@
     </section>
 
     <section class="view" id="space">
-      <div class="page-head compact"><div><p class="eyebrow">LCF10 LOOP PHYSICAL HUB</p><h1>พื้นที่ LOOP ที่เชื่อมคน–งาน–ข้อมูล</h1><p>เลือกหมายเลขบนภาพ เพื่อดูว่างานในแต่ละโซนเชื่อมเข้าสู่ระบบอย่างไร</p></div><button class="outline" id="tourBtn">พาชมทั้ง 6 โซน</button></div>
+      <div class="space-head"><div><p class="eyebrow">ONE SPACE · ONE SPIRAL</p><h1>Learning Space ที่ทุกก้าว<br><span>หมุน SPIRAL ให้เกิดขึ้นจริง</span></h1><p>6 โซนในพื้นที่ ไม่ได้แยกจากกระบวนการพัฒนา—แต่ละโซนคือหนึ่งจังหวะของ SPIRAL ที่เปลี่ยนกิจกรรมให้เป็นข้อมูล หลักฐาน และการเติบโตรอบถัดไป</p></div><button class="outline space-tour" id="tourBtn"><span>▶</span> พาชมวงจร 60 วินาที</button></div>
+      <div class="space-signal" aria-label="เส้นทางคุณค่าของ Learning Space"><b>พื้นที่จริง 6 โซน</b><i>→</i><b>SPIRAL 6 จังหวะ</b><i>→</i><b>หลักฐานชุดเดียว</b><i>→</i><strong>Level Up รอบถัดไป</strong></div>
       <div class="space-role-switch"><button class="space-role active" data-space-role="visitor">ผู้เข้าชม · เก็บความรู้และประสบการณ์</button><button class="space-role" data-space-role="participant">ผู้เข้าร่วมเผยแพร่–พัฒนา · ส่งผลงานประเมินคุณภาพ</button></div>
       <div class="space-role-intro active" id="visitor-space"><b>เส้นทางผู้เข้าชม</b><span>เดินชมพื้นที่ ดูผลงาน ฟังประสบการณ์ และบันทึกสิ่งที่อยากนำไปลองใช้</span><strong>ครบ 6 จุด → ได้ใบประกาศ + Learning Passport ใน Portfolio + แผนทดลองใช้ · Level Up รอบถัดไป</strong></div>
       <div class="space-role-intro" id="participant-space"><b>เส้นทางผู้เข้าร่วม</b><span>ส่งผลงานเพื่อประเมินคุณภาพ เผยแพร่ผลงาน รับคำแนะนำ และเก็บหลักฐานการพัฒนาไว้ใน Portfolio</span><strong>ครบ 6 จุด → ได้ Portfolio + ผลประเมินคุณภาพ + แผนขยายผล · Level Up สู่ภารกิจใหม่</strong></div>
+
+      <section class="festival-journey" aria-labelledby="journeyTitle">
+        <div class="journey-head"><div><p class="eyebrow">IMMERSIVE FESTIVAL JOURNEY</p><h2 id="journeyTitle">ลองเดินหนึ่งรอบ แล้วจะเห็นว่า SPIRAL เกิดขึ้นตรงไหน</h2><p>เส้นแสงคือการเดินทางของผู้เข้าร่วม เริ่มรับโจทย์ที่ S และเคลื่อนตามเข็มนาฬิกาจนครบ L ก่อนนำสิ่งที่เรียนรู้กลับไปเริ่มรอบใหม่</p></div><div class="journey-order"><small>เส้นทางเดียวกันทั้งงาน</small><b>S → P → I → R → A → L ↻</b></div></div>
+        <div class="journey-scene">
+          <img src="assets/learning-space-spiral-journey.png" alt="ภาพจำลองการเดินทางในมหกรรมวิชาการ ผ่าน 6 สถานีตามวงจร SPIRAL รอบ Learning Space">
+          <svg class="journey-motion" viewBox="0 0 1600 900" aria-hidden="true">
+            <defs><linearGradient id="journeyGlow" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#49eaff"/><stop offset=".35" stop-color="#967cff"/><stop offset=".68" stop-color="#ffcb4e"/><stop offset="1" stop-color="#ff70c3"/></linearGradient><filter id="journeyBlur"><feGaussianBlur stdDeviation="7" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter><path id="journeyRoute" d="M420 150 C650 55 1040 55 1250 205 C1450 345 1410 610 1160 755 C930 890 520 850 300 680 C90 520 130 275 420 150"/></defs>
+            <use href="#journeyRoute" class="journey-route-glow"/>
+            <use href="#journeyRoute" class="journey-route-dash"/>
+            <circle class="journey-traveler" r="13"><animateMotion dur="12s" repeatCount="indefinite" rotate="auto"><mpath href="#journeyRoute"/></animateMotion></circle>
+            <circle class="journey-traveler-halo" r="28"><animateMotion dur="12s" repeatCount="indefinite" rotate="auto"><mpath href="#journeyRoute"/></animateMotion></circle>
+          </svg>
+          <button class="journey-point jp-s active" data-journey-zone="0"><em>S</em><span><b>Survey</b><small>เช็กอิน · สำรวจโจทย์</small></span></button>
+          <button class="journey-point jp-p" data-journey-zone="1"><em>P</em><span><b>Plan</b><small>สร้างแผน · Portfolio</small></span></button>
+          <button class="journey-point jp-i" data-journey-zone="2"><em>I</em><span><b>Implement</b><small>Coaching · PLC</small></span></button>
+          <button class="journey-point jp-r" data-journey-zone="3"><em>R</em><span><b>Reflect</b><small>ทดลอง · สะท้อนผล</small></span></button>
+          <button class="journey-point jp-a" data-journey-zone="4"><em>A</em><span><b>Amplify</b><small>Show · Share · ขยายผล</small></span></button>
+          <button class="journey-point jp-l" data-journey-zone="5"><em>L</em><span><b>Learn</b><small>สรุปผล · เริ่มรอบใหม่</small></span></button>
+          <div class="journey-core"><span>ศูนย์กลางการเดินทาง</span><b>Learning Space</b><small>คน · งาน · ข้อมูล เชื่อมถึงกัน</small></div>
+        </div>
+        <div class="journey-foot"><span><i>1</i> เข้างานพร้อมโจทย์</span><span><i>2</i> ลงมือและเก็บหลักฐาน</span><span><i>3</i> ออกจากงานพร้อมแผนรอบใหม่</span></div>
+      </section>
       
-      <div class="space-layout">
-        <div class="blueprint">
-          <img src="assets/learning-space-concept.png" alt="ภาพร่าง Learning Space แบบ 6 โซน เชื่อมต่อด้วยวงจร SPIRAL">
-          <button class="hotspot h1 active" data-zone="0" aria-label="โซน 1">01</button>
-          <button class="hotspot h2" data-zone="1" aria-label="โซน 2">02</button>
-          <button class="hotspot h3" data-zone="2" aria-label="โซน 3">03</button>
-          <button class="hotspot h4" data-zone="3" aria-label="โซน 4">04</button>
-          <button class="hotspot h5" data-zone="4" aria-label="โซน 5">05</button>
-          <button class="hotspot h6" data-zone="5" aria-label="โซน 6">06</button>
+      <div class="space-experience merged-detail" id="spaceHero">
+        <div class="space-map-panel">
+          <div class="space-map-kicker"><span class="live-dot"></span> อ่านตามเข็มนาฬิกา · S → P → I → R → A → L</div>
+          <div class="spiral-space-map" aria-label="แผนผัง 6 โซน Learning Space ที่ตรงกับ 6 ขั้น SPIRAL">
+            <svg class="spiral-trace" viewBox="0 0 620 620" aria-hidden="true"><defs><linearGradient id="spiralGlow" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#43e6ff"/><stop offset=".5" stop-color="#8f6cff"/><stop offset="1" stop-color="#ffd65a"/></linearGradient><filter id="glow"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter><marker id="cycleArrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L11 6 L1 11 Z" fill="#fff"/></marker></defs><path d="M310 70 C455 70 550 165 550 310 C550 455 455 550 310 550 C165 550 70 455 70 310 C70 165 165 70 290 70" marker-end="url(#cycleArrow)"/><path class="trace-dash" d="M310 70 C455 70 550 165 550 310 C550 455 455 550 310 550 C165 550 70 455 70 310 C70 165 165 70 290 70"/></svg>
+            <div class="space-core"><small>PHYSICAL × DIGITAL</small><strong>Learning<br>Space</strong><span>พื้นที่เดียว · ข้อมูลต่อเนื่อง</span></div>
+            <button class="hotspot spiral-node h1 active" data-zone="0" aria-label="โซน 1 Survey สำรวจ"><em>S</em><span><small>ZONE 01</small><b>Survey</b><i>สำรวจโจทย์</i></span></button>
+            <button class="hotspot spiral-node h2" data-zone="1" aria-label="โซน 2 Plan วางแผน"><em>P</em><span><small>ZONE 02</small><b>Plan</b><i>วางเส้นทาง</i></span></button>
+            <button class="hotspot spiral-node h3" data-zone="2" aria-label="โซน 3 Implement ลงมือ"><em>I</em><span><small>ZONE 03</small><b>Implement</b><i>ลงมือร่วมกัน</i></span></button>
+            <button class="hotspot spiral-node h4" data-zone="3" aria-label="โซน 4 Reflect สะท้อน"><em>R</em><span><small>ZONE 04</small><b>Reflect</b><i>ทดลอง–สะท้อน</i></span></button>
+            <button class="hotspot spiral-node h5" data-zone="4" aria-label="โซน 5 Amplify ขยายผล"><em>A</em><span><small>ZONE 05</small><b>Amplify</b><i>เผยแพร่–ขยายผล</i></span></button>
+            <button class="hotspot spiral-node h6" data-zone="5" aria-label="โซน 6 Learn เรียนรู้ต่อ"><em>L</em><span><small>ZONE 06</small><b>Learn</b><i>เรียนรู้รอบใหม่</i></span></button>
+          </div>
+          <div class="map-caption"><span>เริ่มจากโจทย์จริง</span><b>ทุกโซนสร้างหลักฐานลง Portfolio เดียวกัน</b><span>จบหนึ่งรอบ = เริ่มรอบที่ดีขึ้น</span></div>
         </div>
         <aside class="zone-card" id="zoneCard">
-          <span class="zone-no" id="zoneNo">01</span><p class="eyebrow" id="zoneType">WELCOME & MAPPING</p>
+          <div class="zone-stage"><span class="zone-letter" id="zoneLetter">S</span><div><small>SPIRAL STAGE</small><strong id="zoneSpiral">SURVEY · สำรวจ</strong></div><span class="zone-no" id="zoneNo">01</span></div><p class="eyebrow" id="zoneType">WELCOME & MAPPING</p>
           <h2 id="zoneTitle">จุดรับเข้าและสำรวจความพร้อม</h2>
           <p id="zoneDesc">ยืนยันตัวตน ลงทะเบียน และเก็บข้อมูลความต้องการครั้งเดียว ระบบสร้างโปรไฟล์และเส้นทางพัฒนาให้ทันที</p>
           <ul id="zoneList"><li>เช็กอินผ่าน QR / Line OA</li><li>Mapping ปัญหาและศักยภาพ</li><li>ส่งต่อทีมและทรัพยากรอัตโนมัติ</li></ul>
-          <div class="data-link"><span>ข้อมูลที่ส่งต่อ</span><b id="zoneData">Profile → Dashboard → Coach</b></div>
+          <div class="zone-flow-label">สิ่งที่เกิดขึ้นในโซนนี้</div><div class="zone-flow"><span>ประสบการณ์</span><i>→</i><span>ข้อมูล</span><i>→</i><strong>การพัฒนาต่อ</strong></div>
+          <div class="data-link"><span>หลักฐานที่ไหลเข้าสู่ระบบ</span><b id="zoneData">Profile → Dashboard → Coach</b></div>
+          <button class="zone-mission" id="missionOpen"><span>◎</span><b>เปิดภารกิจของโซนนี้</b><small>เก็บ Badge ลง Learning Passport</small></button>
         </aside>
       </div>
       <div class="mission-modal" id="missionModal" aria-hidden="true"><div class="mission-dialog"><button class="mission-close" id="missionClose" aria-label="ปิด">×</button><p class="eyebrow">MISSION <span id="missionNo">01</span> · LEARNING SPACE</p><h2 id="missionTitle">ภารกิจที่ 1</h2><p id="missionZone" class="mission-zone"></p><div class="mission-columns"><article><b>สำหรับผู้เข้าชม</b><p id="visitorMission"></p><strong id="visitorReward"></strong></article><article><b>สำหรับผู้เข้าร่วม</b><p id="participantMission"></p><strong id="participantReward"></strong></article></div><div class="mission-footer">เมื่อทำภารกิจสำเร็จ Badge จะถูกบันทึกใน <b>Portfolio เดียวกัน</b> และผู้ใช้สามารถเปลี่ยนจากผู้เข้าชมเป็นผู้เข้าร่วมได้ทุกเมื่อ</div><button class="primary mission-next" id="missionNext">ทำภารกิจนี้แล้ว ✓</button></div></div><div class="outcomes">
