@@ -3,6 +3,7 @@ const views=[...document.querySelectorAll('.view')];
 navButtons.forEach(btn=>btn.addEventListener('click',()=>{
   navButtons.forEach(b=>b.classList.toggle('active',b===btn));
   views.forEach(v=>v.classList.toggle('active',v.id===btn.dataset.view));
+  if(window.matchMedia('(max-width:700px)').matches)btn.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
   window.scrollTo({top:0,behavior:'smooth'});
 }));
 
